@@ -1,12 +1,12 @@
 'use client'
 import React, { useState } from "react";
-import car from "@/app/public/car image.svg";
+
 import Image from "next/image";
 import drive1 from "@/app/public/drive1.svg";
 import drive2 from "@/app/public/drive2.svg";
 import drive3 from "@/app/public/drive3.svg";
 import drive4 from "@/app/public/drive4.svg";
-import { CheckboxDemo } from "../components/checkbox";
+
 
 const DriverRegister = () => {
   const [showPopup, setShowPopup] = useState(false);
@@ -95,7 +95,7 @@ const DriverRegister = () => {
           <div className="flex items-center gap-3">
             <input type="checkbox" />
             <p className="text-white">
-              I agree to MyRide's <span className="text-[#FBA403]">Terms & Conditions</span> and 
+              I agree to MyRides <span className="text-[#FBA403]">Terms & Conditions</span> and 
               <span className="text-[#FBA403]"> Privacy Policy</span>.
             </p>
           </div>
