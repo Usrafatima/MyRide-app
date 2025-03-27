@@ -5,6 +5,8 @@ import LocationSearch from '../components/LocationSearch';
 
 import Dropoff from "@/app/components/Dropoff";
 
+import { LatLngTuple } from "leaflet"; // Import LatLngTuple type
+
 interface Place {
   lat: number;
   lng: number;
@@ -18,12 +20,18 @@ export default function MapBoxMap() {
       <div className="flex flex-col items-center w-full h-[500px] bg-[#242424]">
         {/* Left Side - Location Search */}
         <div className="w-full lg:w-1/2 h-full mt-2">
-          <Map selectPosition={selectPosition ?? undefined} />
+          <Map
+            selectPosition={
+              selectPosition
+                ? ([selectPosition.lat, selectPosition.lng] as LatLngTuple)
+                : undefined
+            }
+          />
         </div>
         {/* Right Side - Location Inputs */}
         <div className="w-1/2 p-4 border-r-2">
-          <LocationSearch setSelectPosition={(place) => setSelectPosition(place)} selectPosition={null} />
-          <Dropoff setSelectPosition={(place) => setSelectPosition(place)} />
+          <LocationSearch setSelectPosition={setSelectPosition} />
+          <Dropoff setSelectPosition={setSelectPosition} />
         </div>
       </div>
     </div>
