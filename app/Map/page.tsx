@@ -5,7 +5,7 @@ import LocationSearch from '../components/LocationSearch';
 
 import Dropoff from "@/app/components/Dropoff";
 
-import { LatLngExpression } from "leaflet"; // ✅ Correct import
+
 
 interface Place {
   lat: number;
