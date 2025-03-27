@@ -6,8 +6,6 @@ import { Place } from '@/types';
 import Dropoff from "@/app/components/Dropoff";
 export default function MapBoxMap() {
   const [selectPosition, setSelectPosition] = useState<Place | null>(null);
-export default function MapBoxMap() {
-  const [selectPosition, setSelectPosition] = useState<Place | null>(null);
 
   // ✅ Ensure osm_id is always a number & explicitly cast type
   const safeSelectPosition: Place | null = selectPosition
