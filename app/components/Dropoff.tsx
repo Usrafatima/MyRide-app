@@ -1,17 +1,17 @@
 'use client'
-import { use, useState } from "react";
+import {  useState } from "react";
 import React from "react";
-import OutlinedInput from "@mui/material/OutlinedInput";
-import Button from "@mui/material/Button";
+
+
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import Divider from '@mui/material/Divider';
-import { InboxIcon } from "lucide-react";
+
 import Image from "next/image";
 import redmarker from "@/app/public/redmarker.png";
-import { redirect } from "next/dist/server/api-utils";
+
 import { Search } from "lucide-react";
 
 interface Place {
@@ -26,7 +26,7 @@ interface LocationSearchProps {
 export default function LocationSearch({ setSelectPosition }: LocationSearchProps) {
   const [searchText, setSearchText] = useState("");
   const [listPlace, setListPlace] = useState<Place[]>([]);
-  const [searched, setSearched] = useState(false);
+  const [ setSearched] = useState(false);
 
   const NOMINATIM_BASE_URL = "https://nominatim.openstreetmap.org/search";
 
