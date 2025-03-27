@@ -20,21 +20,20 @@ export default function MapBoxMap() {
       <div className="flex flex-col items-center w-full h-[500px] bg-[#242424]">
         {/* Left Side - Location Search */}
         <div className="w-full lg:w-1/2 h-full mt-2">
-         <Map
-  selectPosition={
-    selectPosition
-      ? { lat: selectPosition.lat, lon: selectPosition.lng } // ✅ Use 'lon' instead of 'lng'
-      : undefined
-  }
-/>
+          <Map
+            selectPosition={
+              selectPosition
+                ? { lat: selectPosition.lat, lon: selectPosition.lng } // ✅ Use 'lon' instead of 'lng' if required
+                : undefined
+            }
+          />
         </div>
         {/* Right Side - Location Inputs */}
         <div className="w-1/2 p-4 border-r-2">
-          <LocationSearch setSelectPosition={setSelectPosition} />
-          <Dropoff setSelectPosition={setSelectPosition} />
+          <LocationSearch setSelectPosition={(place) => setSelectPosition(place)} />
+          <Dropoff setSelectPosition={(place) => setSelectPosition(place)} />
         </div>
       </div>
     </div>
   );
 }
-
