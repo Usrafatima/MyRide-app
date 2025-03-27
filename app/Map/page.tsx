@@ -2,7 +2,7 @@
 import React, { useState } from 'react'
 import Map from '@/app/components/Map';
 import LocationSearch from '../components/LocationSearch';
-import { DropletOff } from 'lucide-react';
+
 import Dropoff from "@/app/components/Dropoff";
 
 
