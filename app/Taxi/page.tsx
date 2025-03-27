@@ -2,14 +2,14 @@
 import React, { useState } from 'react'
 import Map from '@/app/components/Map';
 import LocationSearch from '../components/LocationSearch';
-import { DropletOff } from 'lucide-react';
+
 import Dropoff from "@/app/components/Dropoff";
 import car1 from "@/app/public/car1.svg";
 import Image from 'next/image';
 import car2 from "@/app/public/car2.svg";
 import car3 from "@/app/public/car3.svg";
 import car4 from "@/app/public/car4.svg";
-import Link from 'next/link';
+
 
 
 
