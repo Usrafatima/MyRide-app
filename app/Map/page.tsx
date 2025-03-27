@@ -2,7 +2,7 @@
 import React, { useState } from 'react'
 import Map from '@/app/components/Map';
 import LocationSearch from '../components/LocationSearch';
-import { Place } from '../types'; 
+import { Place } from '@/types'; 
 import Dropoff from "@/app/components/Dropoff";
 export default function MapBoxMap() {
   const [selectPosition, setSelectPosition] = useState<Place | null>(null);
