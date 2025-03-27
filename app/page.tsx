@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Hero from "@/app/public/Hero image.svg";
-import LocationSearch from "@/app/components/LocationSearch";
+
 import card from "@/app/public/Card image.svg";
 import cardd from "@/app/public/Cardd.svg";
 import carddd from "@/app/public/Carddd.svg";
@@ -10,7 +10,7 @@ import car3 from "@/app/public/car3.svg";
 import car4 from "@/app/public/car4.svg";
 import car from "@/app/public/car image.svg";
 import Link from "next/link";
-import BasicCard from "@/app/components/basic";
+
 
 export default function Home() {
   return (
@@ -178,7 +178,7 @@ export default function Home() {
   <div className="text-center lg:text-left mt-5 lg:mt-20 flex-1 px-4">
     <h1 className="font-bold text-white text-2xl lg:text-3xl">Become a Driver</h1>
     <p className="text-white text-lg mt-2 max-w-lg">
-      Be a part of a growing community of myRiders. Register as a driver and don't forget to register your car as well.
+      Be a part of a growing community of myRiders. Register as a driver and dont forget to register your car as well.
     </p>
   </div>
 
