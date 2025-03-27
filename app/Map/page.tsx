@@ -18,7 +18,7 @@ export default function MapBoxMap() {
     <div className="flex flex-col items-center w-full h-[500px]  border-red bg-[#242424] ">
       {/* Left Side - Location Search */}
       <div className="w-full  lg:w-1/2 h-full mt-2">
-        <Map selectPosition={selectPosition} />
+        <Map selectPosition={selectPosition ?? undefined} />
       </div>
       {/* Right Side - Map */}
       <div className="w-1/2 p-4 border-r-2">
