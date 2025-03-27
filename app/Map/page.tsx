@@ -23,10 +23,10 @@ export default function MapBoxMap() {
 
         {/* Right Side - Location Inputs */}
         <div className="w-1/2 p-4 border-r-2">
-          <LocationSearch 
-            selectPosition={selectPosition} // ✅ Fixed prop passing
-            setSelectPosition={setSelectPosition} 
-          />
+        <LocationSearch 
+  selectPosition={selectPosition as Place | null} // ✅ Force correct type
+  setSelectPosition={setSelectPosition} 
+/>
           <Dropoff 
             selectPosition={selectPosition} // ✅ Fixed prop passing
             setSelectPosition={setSelectPosition} 
