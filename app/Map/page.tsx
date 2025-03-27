@@ -4,9 +4,6 @@ import Map from '@/app/components/Map';
 import LocationSearch from '../components/LocationSearch';
 
 import Dropoff from "@/app/components/Dropoff";
-
-
-
 interface Place {
   lat: number;
   lng: number;
@@ -23,15 +20,21 @@ export default function MapBoxMap() {
           <Map
             selectPosition={
               selectPosition
-                ? { lat: selectPosition.lat, lon: selectPosition.lng } // ✅ Use 'lon' instead of 'lng' if required
+                ? { lat: selectPosition.lat, lon: selectPosition.lng } // ✅ Change to lng if Map needs it
                 : undefined
             }
           />
         </div>
         {/* Right Side - Location Inputs */}
         <div className="w-1/2 p-4 border-r-2">
-          <LocationSearch setSelectPosition={(place) => setSelectPosition(place)} />
-          <Dropoff setSelectPosition={(place) => setSelectPosition(place)} />
+          <LocationSearch 
+            selectPosition={selectPosition} // ✅ Fix: Passing selectPosition
+            setSelectPosition={setSelectPosition} 
+          />
+          <Dropoff 
+            selectPosition={selectPosition} // ✅ Fix: Passing selectPosition
+            setSelectPosition={setSelectPosition} 
+          />
         </div>
       </div>
     </div>
