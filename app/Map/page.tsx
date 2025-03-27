@@ -5,7 +5,7 @@ import LocationSearch from '../components/LocationSearch';
 
 import Dropoff from "@/app/components/Dropoff";
 
-import { LatLngTuple } from "leaflet"; // Import LatLngTuple type
+import { LatLngExpression } from "leaflet"; // Import correct type
 
 interface Place {
   lat: number;
@@ -23,7 +23,7 @@ export default function MapBoxMap() {
           <Map
             selectPosition={
               selectPosition
-                ? ([selectPosition.lat, selectPosition.lng] as LatLngTuple)
+                ? ([selectPosition.lat, selectPosition.lng] as LatLngExpression)
                 : undefined
             }
           />
