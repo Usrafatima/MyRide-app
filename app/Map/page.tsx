@@ -5,8 +5,6 @@ import LocationSearch from '../components/LocationSearch';
 
 import Dropoff from "@/app/components/Dropoff";
 
-import { LatLngExpression } from "leaflet"; // Import correct type
-
 interface Place {
   lat: number;
   lng: number;
@@ -37,3 +35,4 @@ export default function MapBoxMap() {
     </div>
   );
 }
+
