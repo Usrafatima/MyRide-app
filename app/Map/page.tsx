@@ -10,10 +10,13 @@ export default function MapBoxMap() {
   const [selectPosition, setSelectPosition] = useState<Place | null>(null);
 
   // ✅ Ensure selectPosition is always a valid object
-  const safeSelectPosition = selectPosition
-    ? { ...selectPosition, osm_id: selectPosition.osm_id ?? 0 }
-    : null;
-
+ const safeSelectPosition = selectPosition
+  ? { 
+      ...selectPosition, 
+      osm_id: selectPosition.osm_id ?? 0, 
+      display_name: selectPosition.display_name ?? "" 
+    }
+  : null;
   return (
     <div>
       <div className="flex flex-col items-center w-full h-[500px] bg-[#242424]">
