@@ -9,13 +9,11 @@ import Dropoff from "@/app/components/Dropoff";
 export default function MapBoxMap() {
   const [selectPosition, setSelectPosition] = useState<Place | null>(null);
 
-  // ✅ Ensure selectPosition is always a valid object
- const safeSelectPosition = selectPosition
+const safeSelectPosition: Place | null = selectPosition
   ? { 
       ...selectPosition, 
       osm_id: selectPosition.osm_id ?? 0, 
       display_name: selectPosition.display_name ?? "" 
-    }
   : null;
   return (
     <div>
