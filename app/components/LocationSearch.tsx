@@ -15,24 +15,21 @@ import redmarker from "@/app/public/redmarker.png";
 import { Search } from "lucide-react";
 
 
-
-
-
-
 interface Place {
   osm_id: number;
-  display_name: string;
+  lat: number;  // ✅ Ensure lat is included
+  lng: number;  // ✅ Ensure lng is included
+  display_name: string; // ✅ Avoid undefined issue
 }
-
 interface LocationSearchProps {
   selectPosition: Place | null;
   setSelectPosition: (place: Place) => void;
 }
 
-export default function LocationSearch({ setSelectPosition }: LocationSearchProps) {
+export default function LocationSearch({ selectPosition, setSelectPosition }: LocationSearchProps) {
   const [searchText, setSearchText] = useState("");
   const [listPlace, setListPlace] = useState<Place[]>([]);
-  const [setSearched] = useState(false);
+  const [searched, setSearched] = useState(false);
 
   const NOMINATIM_BASE_URL = "https://nominatim.openstreetmap.org/search";
 
