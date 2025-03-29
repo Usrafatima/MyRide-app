@@ -1,5 +1,6 @@
 export interface Place {
+  osm_id: number;
   lat: number;
   lng: number;
-  osm_id?: number; // Making osm_id optional
+  display_name: string;
 }
