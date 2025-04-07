@@ -8,14 +8,8 @@ import Dropoff from "@/app/components/Dropoff";
 export default function MapBoxMap() {
   const [selectPosition, setSelectPosition] = useState<Place | null>(null);
 
-  const safeSelectPosition: Place | null = selectPosition
-    ? {
-        osm_id: selectPosition.osm_id ?? 0,
-        lat: selectPosition.lat,
-        lng: selectPosition.lng,
-        display_name: selectPosition.display_name || "",
-      }
-    : null;
+  // Directly use selectPosition instead of creating a new safeSelectPosition object
+  const safeSelectPosition = selectPosition;
 
   return (
     <div>
@@ -31,13 +25,13 @@ export default function MapBoxMap() {
         </div>
 
         <div className="w-full lg:w-1/2 p-4 border-r-2">
-          <LocationSearch 
-            selectPosition={safeSelectPosition} 
-            setSelectPosition={setSelectPosition} 
+          <LocationSearch
+            selectPosition={safeSelectPosition}
+            setSelectPosition={setSelectPosition}
           />
-          <Dropoff 
-            selectPosition={safeSelectPosition} 
-            setSelectPosition={setSelectPosition} 
+          <Dropoff
+            selectPosition={safeSelectPosition}
+            setSelectPosition={setSelectPosition}
           />
         </div>
       </div>
