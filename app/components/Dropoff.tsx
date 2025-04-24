@@ -16,10 +16,11 @@ import { Search } from "lucide-react";
 
 interface Place {
   osm_id: number;
-  lat: number;  
-  lng: number;  
-  display_name: string; 
+  lat: number;
+  lng: number;
+  display_name: string;
 }
+
 interface DropoffProps {
   selectPosition: Place | null;
   setSelectPosition: React.Dispatch<React.SetStateAction<Place | null>>;
@@ -28,13 +29,11 @@ interface DropoffProps {
 export default function Dropoff({ setSelectPosition }: DropoffProps) {
   const [searchText, setSearchText] = useState("");
   const [listPlace, setListPlace] = useState<Place[]>([]);
-  const [searched, setSearched] = useState(false);
 
   const NOMINATIM_BASE_URL = "https://nominatim.openstreetmap.org/search";
 
   const handleSearch = () => {
     if (!searchText.trim()) return;
-    setSearched(true);
 
     const params = new URLSearchParams({
       q: searchText,
@@ -57,7 +56,6 @@ export default function Dropoff({ setSelectPosition }: DropoffProps) {
     setSearchText(newValue);
     if (newValue.trim() === "") {
       setListPlace([]);
-      setSearched(false);
     }
   };
 
@@ -110,3 +108,4 @@ export default function Dropoff({ setSelectPosition }: DropoffProps) {
     </div>
   );
 }
+
